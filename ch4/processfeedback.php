@@ -74,9 +74,29 @@
 	$feedback=str_replace($offcolor, '%!@*', $feedback);
 	echo "<p>$feedback[1]</p>";
 
+	//regular expression
+	if (!eregi('^[a-zA-Z0-9_\-\.]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$', $email)) {
+		echo "<p>That is not a valid email address";
+	}
+	if (eregi("shop|customer service|retail", $feedback)) {
+		$toaddress="retail@example.com";
+	}
+	elseif (eregi('delivery|fulfill', $feedback)) {
+		$toaddress="fulfillment@example.com";
+	}
+	elseif (eregi('bill|account', $feedback)) {
+		$toaddress="account@example.com";
+	}
+	if(eregi('bigcstomer\.com', $email)){
+		$toaddress="bob@example.com";
+	}
 
-
-
+	//split
+	$address="username@example.com";
+	$arr=split("\.|@", $address);
+	while(list($key,$value)=each($arr)){
+		echo "<br />".$value;
+	}
 	
 ?>
 <html>
