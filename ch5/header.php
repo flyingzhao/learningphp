@@ -40,18 +40,3 @@
 			</td>
 		</tr>
 	</table>
-	<!--page content-->
-	<p>welcome to the home of TLD consulting,Please take some time to get to know us</p>
-	<p>we specialize in servicing your business needs and hope to hear from you soon.</p>
-	<!--page footer-->
-	<table width="100%"bgcolor="black"cellpadding="12"border="0">
-		<tr>
-			<td>
-				<p class="foot">&copy;TLD Consulting Pty LTD.</p>
-				<p class="foot">Please see our<a href="legal.php">legal information page</a></p>
-			</td>
-		</tr>
-	</table>
-
-</body>
-</html>
