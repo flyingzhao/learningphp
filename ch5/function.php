@@ -18,6 +18,7 @@
 			$value=next($data);
 		}
 		echo "</table>\n";
+		// echo "$test";
 	}
 	function var_args(){
 		echo "Number of parameters:";
@@ -32,6 +33,8 @@
 	}
 ?>
 <?php
+	// $test="test";
+	// echo "$test";
 	$my_array= array('line 1.','line 2.','line 3.');
 	create_table($my_array);
 	create_table2($my_array,3,8,8);
