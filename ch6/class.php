@@ -10,6 +10,8 @@
 			echo "constructor called with parameter".$param."<br>";
 		}
 		public $attribute;
+		// private $attribute;
+
 		function operation($param){
 			$this->attribute=$param;
 			echo $this->attribute."<br>";
@@ -28,8 +30,9 @@
 	// echo $a->attribute;
 
 	$a->__set("attribute","value3");
-	// echo $a->attribute;
+	echo $a->attribute;
 	echo $a->__get("attribute");
+
 	$b=new classname("Second");
 	$c=new classname();
 ?>
