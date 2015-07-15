@@ -56,19 +56,39 @@
 	}
 
 
- 	// echo $DOCUMENT_ROOT;
-	@$fp=fopen("$DOCUMENT_ROOT/bob/ch7/orders.txt",'ab');
-	if(!$fp){
-		echo "<p>Your order could not be processed at this time</p></body></html>";
-		exit;
-	}
+ // 	echo $DOCUMENT_ROOT;
+	// @$fp=fopen("$DOCUMENT_ROOT/bob/ch7/orders.txt",'ab');
+	// if(!$fp){
+	// 	echo "<p>Your order could not be processed at this time</p></body></html>";
+	// 	exit;
+	// }
+	// $outputstring=$date."\t".$tireqty."tires \t".$oilqty."oil\t".$sparkqty."spark plugs \t$".$totalamount."\t".$address."\n";
+	// fwrite($fp, $outputstring);
+	// fclose($fp);
+
 	$outputstring=$date."\t".$tireqty."tires \t".$oilqty."oil\t".$sparkqty."spark plugs \t$".$totalamount."\t".$address."\n";
-	fwrite($fp, $outputstring);
-	fclose($fp);
-
-
-	
-
+	try {
+		if (!($fp=@fopen("$DOCUMENT_ROOT/bob/ch7/orders.txt",'ab'))) {
+			throw new fileOpenException();
+		}
+		if (!flock($fp,LOCK_EX)){
+			throw new fileLockException();
+		}
+		if (!fwrite($fp, $outputstring,strlen($outputstring))) {
+			throw new fileWriteException();
+		}
+		flock($fp, LOCK_UN);
+		fclose($fp);
+		echo "<p>Order written</p>";
+	} catch (fileOpenException $foe) {
+		echo "<p><strong>Orders file can not be opened</strong></p>";
+	}
+	catch(fileLockException $e){
+		echo "<p><strong>Orders file can not be processed now</strong></p>";	
+	}
+	catch(fileWriteException $e){
+		echo "<p><strong>Orders file can not be processed now</strong></p>";	
+	}
 
 
 	// echo "tire  $tireqty <br />";
