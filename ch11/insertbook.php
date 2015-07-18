@@ -20,24 +20,31 @@
 				$isbn=addslashes($isbn);
 				$author=addslashes($author);
 				$title=addslashes($title);
-				$price=addslashes($price);
+				// $price=addslashes($price);
+				$price=doubleval($price);
 			}
 			@$db=new mysqli('localhost','bookorama','bookorama123','books');
 			if (mysqli_connect_errno()) {
 				echo "Error:can not connect to the database";
 				exit;
 			}
-			$query="insert into books values('".$isbn."','".$author."','".$title."','".$price."')";
-			$results=$db->query($query);
-			if ($results) {
-				echo $db->affected_rows."book insert into databases";
-			}
-			else{
-				echo "An error occured.The item was not added";
-			}
+			// $query="insert into books values('".$isbn."','".$author."','".$title."','".$price."')";
+			// $results=$db->query($query);
+			// if ($results) {
+			// 	echo $db->affected_rows."book insert into databases";
+			// }
+			// else{
+			// 	echo "An error occured.The item was not added";
+			// }
+			// $db->close;
 
-			// $db->free;
-			$db->close;
+			//prepared
+			$query="insert into books values(?,?,?,?)";
+			$stmt=$db->prepare($query);
+			$stmt->bind_param("sssd",$isbn,$author,$title,$price);
+			$stmt->execute();
+			echo $stmt->affected_rows."book inserted into database";
+			$stmt->close();
 
 		?>
 		
