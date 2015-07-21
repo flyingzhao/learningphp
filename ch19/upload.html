@@ -1,0 +1,16 @@
+<html>
+<head>
+	<title>Upload A File</title>
+</head>
+<body>
+	<h1>Upload a file</h1>
+	<form action="upload.php" method="post"enctype="multipart/form-data">
+		<div>
+			<input type="hidden" name="MAX_FILE_SIZE" value="1000000"/>
+			<label for="userfile">UpLoad a file:</label>
+			<input type="file" name="userfile" id="userfile"/>
+			<input type="submit" value="Send File"/>
+		</div>
+	</form>
+</body>
+</html>
