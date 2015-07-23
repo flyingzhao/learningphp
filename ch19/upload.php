@@ -38,8 +38,8 @@
 				}
 				//put the file where we'd like it
 				$upfile="./uploads/".$_FILES['userfile']['name'];
-				if (is_uploaded_file($_FILES['userfile']['temp_name'])) {
-					if (!move_uploaded_file($_FILES['userfile']['tempname'], $upfile)) {
+				if (is_uploaded_file($_FILES['userfile']['tmp_name'])) {
+					if (!move_uploaded_file($_FILES['userfile']['tmp_name'], $upfile)) {
 						echo "Problem:could not move file to destination directory";
 						exit;
 					}
