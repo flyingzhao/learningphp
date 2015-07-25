@@ -1,10 +1,17 @@
 <p><strong>PHP and MySQL Web Development(Fourth Edition)</strong></p>
 Development Environment:<br>
-Ubuntu 14.04 <br />
-PHP 5.5.9 <br />
-MySQL 5.5<br />
-Apache 2.4.7<br />
+<ul>
+	<li>Ubuntu 14.04 </li>
+	<li>PHP 5.5.9 </li>
+	<li>MySQL 5.5</li>
+	<li>Apache 2.4.7</li>
+</ul>
+<br />
 Tools:<br />
-Sublime 2<br/>
-Meld<br />
+<ul>
+	<li>SublimeText 2</li>
+	<li>Meld</li>
+</ul>
+<br />
+
 
