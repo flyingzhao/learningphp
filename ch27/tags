@@ -1,0 +1,70 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+bm_table	output_fns.php	/^  $bm_table = true;$/;"	v
+bookmark	bookmarks.sql	/^create table bookmark($/;"	t
+bookmark.bm_URL	bookmarks.sql	/^	username varchar(16) not null,$/;"	F
+bookmark.username	bookmarks.sql	/^create table bookmark($/;"	F
+change_password	user_auth_fns.php	/^function change_password($username,$old_passwd,$new_passwd){$/;"	f
+check_valid_user	user_auth_fns.php	/^function check_valid_user(){$/;"	f
+color	output_fns.php	/^        $color = "#cccccc";$/;"	v
+color	output_fns.php	/^        $color = "#ffffff";$/;"	v
+color	output_fns.php	/^  $color = "#cccccc";$/;"	v
+conn	user_auth_fns.php	/^	$conn=db_connect();$/;"	v
+db_connect	db_fns.php	/^function db_connect(){$/;"	f
+dictionary	user_auth_fns.php	/^	$dictionary='\/usr\/share\/dict\/words';$/;"	v
+display_add_bm_form	output_fns.php	/^function display_add_bm_form() {$/;"	f
+display_forgot_form	output_fns.php	/^function display_forgot_form() {$/;"	f
+display_login_form	output_fns.php	/^function display_login_form() {$/;"	f
+display_password_form	output_fns.php	/^function display_password_form() {$/;"	f
+display_recommended_urls	output_fns.php	/^function display_recommended_urls($url_array) {$/;"	f
+display_registration_form	output_fns.php	/^function display_registration_form() {$/;"	f
+display_site_info	output_fns.php	/^function display_site_info() {$/;"	f
+display_user_menu	output_fns.php	/^function display_user_menu() {$/;"	f
+display_user_urls	output_fns.php	/^function display_user_urls($url_array) {$/;"	f
+do_html_URL	output_fns.php	/^function do_html_URL($url, $name) {$/;"	f
+do_html_footer	output_fns.php	/^function do_html_footer() {$/;"	f
+do_html_header	output_fns.php	/^function do_html_header($title){$/;"	f
+do_html_heading	output_fns.php	/^function do_html_heading($heading) {$/;"	f
+email	register_new.php	/^$email=$_POST['email'];$/;"	v
+filled_out	data_valid_fns.php	/^function filled_out($form_vars){$/;"	f
+fp	user_auth_fns.php	/^	$fp=@fopen($dictionary,'r');$/;"	v
+get_random_word	user_auth_fns.php	/^function get_random_word($min_length,$maxlength){$/;"	f
+login	user_auth_fns.php	/^function login($username,$passwd){$/;"	f
+new_passwd	change_passwd.php	/^$new_passwd=$_POST['new_passwd'];$/;"	v
+new_passwd	user_auth_fns.php	/^	$new_passwd=get_random_word(6,13);$/;"	v
+new_passwd2	change_passwd.php	/^$new_passwd2=$_POST['new_passwd2'];$/;"	v
+notify_password	user_auth_fns.php	/^function notify_password($username,$password){$/;"	f
+old_passwd	change_passwd.php	/^$old_passwd=$_POST['old_passwd'];$/;"	v
+old_user	logout.php	/^$old_user=$_SESSION['valid_user'];$/;"	v
+passwd	member.php	/^$passwd=$_POST['passwd'];$/;"	v
+passwd	register_new.php	/^$passwd=$_POST['passwd'];$/;"	v
+passwd2	register_new.php	/^$passwd2=$_POST['passwd2'];$/;"	v
+password	forgot_passwd.php	/^	$password=reset_password($username);$/;"	v
+query	user_auth_fns.php	/^	$query="insert into user values('".$username."',sha1('".$password."'),'".$email."')";$/;"	v
+rand_location	user_auth_fns.php	/^	$rand_location=rand(0,$size);$/;"	v
+random_number	user_auth_fns.php	/^	$random_number=rand(0,999);$/;"	v
+register	user_auth_fns.php	/^function register($username,$email,$password){$/;"	f
+reset_password	user_auth_fns.php	/^function reset_password($username){$/;"	f
+result	db_fns.php	/^	$result=new mysqli('localhost','bm_user','password','bookmark');$/;"	v
+result	user_auth_fns.php	/^	$result=$conn->query("select * from user where username='".$username."' and passwd=sha1('".$passwd."')");$/;"	v
+result	user_auth_fns.php	/^	$result=$conn->query("select * from user where username='".$username."'");$/;"	v
+result	user_auth_fns.php	/^	$result=$conn->query("update user $/;"	v
+result	user_auth_fns.php	/^	$result=$conn->query($query);$/;"	v
+result_dest	logout.php	/^$result_dest=session_destroy();$/;"	v
+size	user_auth_fns.php	/^	$size=filesize($dictionary);$/;"	v
+user	bookmarks.sql	/^create table user($/;"	t
+user.email	bookmarks.sql	/^	passwd char(40) not null,$/;"	F
+user.passwd	bookmarks.sql	/^	username varchar(16) not null primary key,$/;"	F
+user.username	bookmarks.sql	/^create table user($/;"	F
+username	forgot_passwd.php	/^$username=$_POST['username'];$/;"	v
+username	member.php	/^$username=$_POST['username'];$/;"	v
+username	register_new.php	/^$username=$_POST['username'];$/;"	v
+valid_email	data_valid_fns.php	/^function valid_email($address){$/;"	f
+word	user_auth_fns.php	/^		$word=fgets($fp,80);	$/;"	v
+word	user_auth_fns.php	/^		$word=fgets($fp,80);$/;"	v
+word	user_auth_fns.php	/^	$word=' ';$/;"	v
+word	user_auth_fns.php	/^	$word=trim($word);$/;"	v
