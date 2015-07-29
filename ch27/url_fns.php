@@ -33,4 +33,17 @@ function get_user_urls($username){
 		
 }
 
+function delete_bm($username,$url){
+	//delete from database
+	$conn=db_connect();
+	$query="delete from bookmark where username='".$username."' and bm_url='".$url."'";
+	// echo $query;
+
+	$result=$conn->query($query);
+	if (!$result) {
+		throw new Exception("Bookmark could not deleted");
+	}
+	return true;
+}
+
 ?>
