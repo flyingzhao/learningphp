@@ -13,7 +13,7 @@ function add_bm($new_url){
 	
 	$result=$conn->query("insert into bookmark values('".$_SESSION['valid_user']."','".$new_url."')");
 	if (!$result) {
-		throw new Exception("Can not query", 1);
+		throw new Exception("Can not query");
 		
 	}
 	return true;
@@ -44,6 +44,42 @@ function delete_bm($username,$url){
 		throw new Exception("Bookmark could not deleted");
 	}
 	return true;
+}
+
+function recommend_urls($valid_user,$popularity=1){
+	//we will provide semi intelligent recommendations to people
+	//if they have an url in common with other users,they may like
+	//other URLs that people like
+
+	$conn=db_connect();
+
+	$query="select bm_URL
+		from bookmark
+		where username in
+			(select distinct(b2.username)
+			from bookmark b1,bookmark b2
+			where b1.username='".$valid_user."'
+			and b1.username!=b2.username
+			and b1.bm_URL=b2.bm_URL)
+		and bm_URL not in
+			(select bm_URL
+			from bookmark 
+			where username='".$valid_user."')
+		group by bm_URL
+		having count(bm_URL)>".$popularity;
+	if(!($result=$conn->query($query))){
+		throw new Exception("Could not query");
+	}
+
+	if ($result->num_rows==0) {
+		throw new Exception("No bookmark to recommend");
+	}
+
+	$urls = array();
+	for ($i=0; $row=$result->fetch_object(); $i++) { 
+		$urls[$i]=$row->bm_URL;
+	}
+	return $urls;
 }
 
 ?>
